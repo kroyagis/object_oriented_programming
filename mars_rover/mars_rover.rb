@@ -19,6 +19,16 @@ class Mars_rover
   end
 
   def turn
-    
+    if turn_right
+      if @hashways[@facing] == 3
+        return @facing = @ways[0]
+      end
+      return @facing = @ways[@hashways[@facing] + 1]
+    elsif turn_left
+      if @hashways[@facing] == 0
+        return @facing = @ways[3]
+      end
+      return @facing = @ways[@hashways[@facing] - 1]
+    end
   end
 end
