@@ -19,4 +19,9 @@ class Cat
       "Invalid hour"
     end
   end
+
+  def meow
+    "Hi! My name is #{@name}, please feed me #{@preferred_food} at #{eats_at}!"
+  end
+  
 end
