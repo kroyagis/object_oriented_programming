@@ -1,5 +1,5 @@
 class Mars_rover
-  attr_accessor :x, :y, :direction
+  attr_accessor :x, :y, :facing
 
 
   def initialize(x, y, facing)
@@ -11,7 +11,16 @@ class Mars_rover
   end
 
   def read_instruction
-
+    puts "Enter instruction"
+    instructions = gets.chomp
+    instructions.each_char do |instruction|
+      if instruction == 'L' || instruction == 'R'
+        turn(instruction)
+      elsif instruction == 'M'
+        move
+      end
+    end
+    "Current position: (#{@x}, #{@y}) #{@facing}"
   end
 
   def move
@@ -27,15 +36,16 @@ class Mars_rover
     if @hashways[@facing] == 3 # when facing West
       @x -= 1
     end
+    "Current position: (#{@x}, #{@y}) #{@facing}"
   end
 
-  def turn
-    if turn_right
+  def turn(direction)
+    if direction == 'R'
       if @hashways[@facing] == 3
         return @facing = @ways[0]
       end
       return @facing = @ways[@hashways[@facing] + 1]
-    elsif turn_left
+    elsif direction == 'L'
       if @hashways[@facing] == 0
         return @facing = @ways[3]
       end
