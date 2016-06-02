@@ -8,4 +8,9 @@ class Paperboy
     @earnings = earnings
   end
 
+  def quota
+    @experience / 2 + @quota
+  end
+
+  
 end
