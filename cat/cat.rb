@@ -23,5 +23,11 @@ class Cat
   def meow
     "Hi! My name is #{@name}, please feed me #{@preferred_food} at #{eats_at}!"
   end
-  
+
 end
+
+smokie = Cat.new('smokie', 'mackerel', 8)
+nunu = Cat.new('nunu', 'tuna', 12)
+
+puts smokie.meow
+puts nunu.meow
