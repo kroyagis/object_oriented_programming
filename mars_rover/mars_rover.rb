@@ -15,7 +15,18 @@ class Mars_rover
   end
 
   def move
-
+    if @hashways[@facing] == 0 # when facing North
+      @y += 1
+    end
+    if @hashways[@facing] == 1 # when facing East
+      @x += 1
+    end
+    if @hashways[@facing] == 2 # when facing South
+      @y -= 1
+    end
+    if @hashways[@facing] == 3 # when facing West
+      @x -= 1
+    end
   end
 
   def turn
