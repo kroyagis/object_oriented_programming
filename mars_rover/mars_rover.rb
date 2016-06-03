@@ -1,7 +1,6 @@
 class Mars_rover
   attr_accessor :x, :y, :facing
 
-
   def initialize(x, y, facing)
     @x = x
     @y = y
@@ -10,17 +9,17 @@ class Mars_rover
     @hashways = Hash[@ways.map.with_index.to_a]
   end
 
-  def read_instruction
-    puts "Enter instruction"
-    instructions = gets.chomp
-    instructions.each_char do |instruction|
+  def read_instruction(instruction)
+
+    # puts "Enter instruction"
+    # instructions = gets.chomp
+    instruction.each_char do |instruction|
       if instruction == 'L' || instruction == 'R'
         turn(instruction)
       elsif instruction == 'M'
         move
       end
     end
-    "Current position: (#{@x}, #{@y}) #{@facing}"
   end
 
   def move
@@ -36,7 +35,6 @@ class Mars_rover
     if @hashways[@facing] == 3 # when facing West
       @x -= 1
     end
-    "Current position: (#{@x}, #{@y}) #{@facing}"
   end
 
   def turn(direction)
@@ -53,3 +51,16 @@ class Mars_rover
     end
   end
 end
+
+# def clean_input(user_input)
+#   if user_input.include? ','
+#     new_user_input = user_input.split(',')
+#   elsif user_input.include? ' '
+#     new_user_input = user_input.split(' ')
+#   end
+# end
+# rover_list = []
+# puts "Enter the name of the rover"
+# name_rover = gets.chomp
+# puts "Enter the coordinates"
+# coordinate_rover = gets.chomp
