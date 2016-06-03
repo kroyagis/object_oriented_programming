@@ -1,12 +1,18 @@
 class Mars_rover
   attr_accessor :x, :y, :facing
 
+
+
   def initialize(x, y, facing)
     @x = x
     @y = y
     @facing = facing
     @ways = ['N', 'E', 'S', 'W']
     @hashways = Hash[@ways.map.with_index.to_a]
+  end
+
+  def check
+    puts @hashways
   end
 
   def read_instruction(instruction)
