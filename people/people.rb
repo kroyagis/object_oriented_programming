@@ -29,3 +29,8 @@ cristina.greeting
 
 chris.teach
 cristina.learn
+
+cristina.teach
+
+# This doesn't work because a teach method can 
+# only be called on instances of Instructor class
