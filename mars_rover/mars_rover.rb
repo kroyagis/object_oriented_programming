@@ -57,8 +57,3 @@ end
 #     new_user_input = user_input.split(' ')
 #   end
 # end
-# rover_list = []
-# puts "Enter the name of the rover"
-# name_rover = gets.chomp
-# puts "Enter the coordinates"
-# coordinate_rover = gets.chomp
